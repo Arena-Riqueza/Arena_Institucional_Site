@@ -17,10 +17,11 @@
   mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 20%, transparent 100%);
 }
 .hero-glow {
-  position: absolute; width: 600px; height: 600px; border-radius: 50%;
+  position: absolute; width: 500px; height: 500px; border-radius: 50%;
   background: radial-gradient(circle, rgba(255,170,0,0.07) 0%, transparent 70%);
-  right: -100px; top: 50%; transform: translateY(-50%);
+  right: calc(25% - 210px); top: 50%; transform: translateY(-50%);
   animation: glowPulse 6s ease-in-out infinite;
+  z-index: 1;
 }
 
 .hero-inner {
