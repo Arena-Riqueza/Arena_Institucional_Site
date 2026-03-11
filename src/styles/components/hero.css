@@ -18,10 +18,10 @@
 }
 .hero-glow {
   position: absolute; width: 500px; height: 500px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(255,170,0,0.07) 0%, transparent 70%);
-  right: calc(25% - 210px); top: 50%; transform: translateY(-50%);
+  background: radial-gradient(circle, rgba(255,170,0,0.10) 0%, transparent 70%);
+  top: 50%; left: 50%; transform: translate(-50%, -50%);
   animation: glowPulse 6s ease-in-out infinite;
-  z-index: 1;
+  z-index: 0;
 }
 
 .hero-inner {

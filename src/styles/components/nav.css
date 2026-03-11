@@ -133,14 +133,25 @@ nav {
     max-height: 0; overflow: hidden;
     transition: max-height .3s ease;
   }
-  .nav-links.open { max-height: 500px; }
+  .nav-links.open { max-height: 80vh; overflow-y: auto; }
   .nav-links a {
     padding: 16px 24px; width: 100%;
     border-bottom: 1px solid rgba(255,170,0,0.08);
     font-size: 18px;
   }
   .nav-cta { margin: 16px 24px !important; text-align: center; }
-  .lang-switcher { padding: 12px 24px; }
-  .lang-dropdown { position: static; opacity: 1; visibility: visible; transform: none; margin-top: 8px; }
-  .lang-btn .lang-arrow { display: none; }
+  .lang-switcher { padding: 12px 24px; width: 100%; }
+  .lang-btn { display: none; }
+  .lang-dropdown {
+    position: static; opacity: 1; visibility: visible; transform: none;
+    background: none; border: none; backdrop-filter: none;
+    padding: 0; display: flex; gap: 8px; flex-wrap: wrap;
+  }
+  .lang-option {
+    padding: 8px 16px;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 6px;
+    font-size: 15px;
+  }
+  .lang-option.active { border-color: rgba(255,170,0,0.4); }
 }
