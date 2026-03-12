@@ -595,9 +595,47 @@
         <span class="cta-path-arrow">→</span>
       </a>
     </div>
-    <a href="mailto:contato@arenadariqueza.com.br" class="btn-primary btn-shine" style="font-size:20px;padding:20px 52px;">
-      Fale com a Equipe Arena →<span class="shine"></span>
-    </a>
+    <!-- Lead Capture Form -->
+    <div class="lead-form-wrapper reveal">
+      <h3 class="lead-form-title">FALE COM A EQUIPE ARENA</h3>
+      <p class="lead-form-subtitle">Preencha seus dados e um consultor entrará em contato</p>
+      <form id="arena-lead-form" data-arena-form novalidate>
+        <div class="lead-form-grid">
+          <div class="lead-form-field">
+            <label for="lead-name">Nome *</label>
+            <input type="text" id="lead-name" name="name" required placeholder="Seu nome completo" autocomplete="name">
+          </div>
+          <div class="lead-form-field">
+            <label for="lead-email">E-mail *</label>
+            <input type="email" id="lead-email" name="email" required placeholder="seu@email.com" autocomplete="email">
+          </div>
+          <div class="lead-form-field">
+            <label for="lead-phone">Telefone</label>
+            <input type="tel" id="lead-phone" name="phone" placeholder="+55 (11) 99999-9999" autocomplete="tel">
+          </div>
+          <div class="lead-form-field">
+            <label for="lead-interest">Interesse</label>
+            <select id="lead-interest" name="interest">
+              <option value="">Selecione...</option>
+              <option value="Imersão / Educação">Imersão / Educação</option>
+              <option value="Arena Crédito">Arena Crédito</option>
+              <option value="Investimentos Internacionais">Investimentos Internacionais</option>
+              <option value="Proteção Patrimonial">Proteção Patrimonial</option>
+              <option value="Licenciamento / Parceria">Licenciamento / Parceria</option>
+              <option value="Outro">Outro</option>
+            </select>
+          </div>
+        </div>
+        <div class="lead-form-field" style="margin-top:12px;">
+          <label for="lead-message">Mensagem</label>
+          <textarea id="lead-message" name="message" rows="3" placeholder="Como podemos ajudar?"></textarea>
+        </div>
+        <div id="lead-form-feedback" class="lead-form-feedback" style="display:none;"></div>
+        <button type="submit" class="btn-primary btn-shine lead-form-btn" id="lead-form-submit">
+          Enviar Mensagem →<span class="shine"></span>
+        </button>
+      </form>
+    </div>
     <p style="margin-top:20px;font-size:16px;color:#334466;">
       contato@arenadariqueza.com.br · Balneário Camboriú, SC
     </p>
