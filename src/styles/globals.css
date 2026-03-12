@@ -199,6 +199,11 @@ body {
   100% { left: 200%; }
 }
 
+@media (max-width: 768px) {
+  .section-title { font-size: clamp(32px, 8vw, 48px); letter-spacing: 1px; }
+  .sub { font-size: 17px; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .orbit, .hero-glow { animation: none !important; }
   .dot { animation: none !important; }
