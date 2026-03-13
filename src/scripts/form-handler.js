@@ -109,6 +109,15 @@ export function initFormHandler() {
     sessionStorage.setItem('arena_utm', JSON.stringify(utms));
   }
 
+  // CTA cards com data-interest pré-selecionam o campo interesse
+  document.querySelectorAll('[data-interest]').forEach((el) => {
+    el.addEventListener('click', () => {
+      const interest = el.getAttribute('data-interest');
+      const select = document.getElementById('lead-interest');
+      if (select && interest) select.value = interest;
+    });
+  });
+
   const form = document.getElementById('arena-lead-form');
   if (!form) return;
 
