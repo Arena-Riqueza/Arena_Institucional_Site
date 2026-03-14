@@ -14,6 +14,16 @@ export function getUTMParams() {
   };
 }
 
+// Captura o ID do consultor via ?ref=<uuid>
+// Permite links personalizados como: arenadariqueza.com.br?ref=<uuid-consultor>
+function getConsultantRef() {
+  const params = new URLSearchParams(window.location.search);
+  const ref = params.get('ref') || '';
+  // Valida formato UUID v4 básico antes de aceitar
+  const UUID_REGEX = /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
+  return UUID_REGEX.test(ref) ? ref : '';
+}
+
 // ── Phone formatting ──
 
 function digitsOnly(str) {
@@ -109,6 +119,12 @@ export function initFormHandler() {
     sessionStorage.setItem('arena_utm', JSON.stringify(utms));
   }
 
+  // Persist consultant ref in sessionStorage (?ref=<uuid>)
+  const consultantRef = getConsultantRef();
+  if (consultantRef) {
+    sessionStorage.setItem('arena_ref', consultantRef);
+  }
+
   // CTA cards com data-interest pré-selecionam o campo interesse
   document.querySelectorAll('[data-interest]').forEach((el) => {
     el.addEventListener('click', () => {
@@ -194,6 +210,9 @@ export function initFormHandler() {
       if (!finalUtms[k]) delete finalUtms[k];
     });
 
+    // Consultant ref: prioriza URL atual, fallback para sessionStorage
+    const consultantId = getConsultantRef() || sessionStorage.getItem('arena_ref') || undefined;
+
     const payload = {
       name,
       email,
@@ -201,6 +220,7 @@ export function initFormHandler() {
       interest: interest || undefined,
       message: message || undefined,
       ...finalUtms,
+      consultantId,
     };
 
     setLoading(submitBtn, true);
