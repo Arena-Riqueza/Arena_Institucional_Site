@@ -125,12 +125,22 @@ export function initFormHandler() {
     sessionStorage.setItem('arena_ref', consultantRef);
   }
 
-  // CTA cards com data-interest pré-selecionam o campo interesse
+  // CTA cards com data-interest pré-selecionam o campo interesse e scrollam ao form
   document.querySelectorAll('[data-interest]').forEach((el) => {
-    el.addEventListener('click', () => {
+    el.addEventListener('click', (e) => {
       const interest = el.getAttribute('data-interest');
       const select = document.getElementById('lead-interest');
-      if (select && interest) select.value = interest;
+      if (select && interest) {
+        select.value = interest;
+        // Scroll ao form com highlight visual
+        const form = document.getElementById('arena-lead-form');
+        if (form) {
+          e.preventDefault();
+          form.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          select.style.borderColor = '#ffaa00';
+          setTimeout(() => { select.style.borderColor = ''; }, 2000);
+        }
+      }
     });
   });
 
