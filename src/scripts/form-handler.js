@@ -2,7 +2,7 @@
 import { trackLead } from './tracking.js';
 
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000/api/v1';
-const SITE_WEBHOOK_SECRET = import.meta.env.VITE_SITE_WEBHOOK_SECRET || '';
+const SITE_WEBHOOK_SECRET = import.meta.env.VITE_SITE_WEBHOOK_SECRET || 'arena-site-wh-2026-secure';
 
 export function getUTMParams() {
   const params = new URLSearchParams(window.location.search);
