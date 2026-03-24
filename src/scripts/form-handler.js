@@ -2,6 +2,7 @@
 import { trackLead } from './tracking.js';
 
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000/api/v1';
+const SITE_WEBHOOK_SECRET = import.meta.env.VITE_SITE_WEBHOOK_SECRET || '';
 
 export function getUTMParams() {
   const params = new URLSearchParams(window.location.search);
@@ -238,9 +239,13 @@ export function initFormHandler() {
     feedback.style.display = 'none';
 
     try {
+      const headers = { 'Content-Type': 'application/json' };
+      if (SITE_WEBHOOK_SECRET) {
+        headers['X-Webhook-Secret'] = SITE_WEBHOOK_SECRET;
+      }
       const res = await fetch(`${API_URL}/webhooks/site`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers,
         body: JSON.stringify(payload),
       });
 
