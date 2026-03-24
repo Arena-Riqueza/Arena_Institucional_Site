@@ -1,4 +1,5 @@
 // UTM parameter capture and lead form submission to CRM API
+import { trackLead } from './tracking.js';
 
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000/api/v1';
 
@@ -249,6 +250,7 @@ export function initFormHandler() {
       }
 
       showFeedback(feedback, 'success', 'Mensagem enviada com sucesso! Em breve entraremos em contato.');
+      trackLead(interest, finalUtms.utmSource);
       form.reset();
       // Clear validation classes
       emailInput?.classList.remove('field-valid', 'field-invalid');

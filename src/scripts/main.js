@@ -5,6 +5,7 @@ import { initTabs } from './tabs.js'
 import { initFormHandler } from './form-handler.js'
 import { initLangSwitcher } from './lang-switcher.js'
 import { initCounters } from './counter.js'
+import { initCookieBanner } from './tracking.js'
 
 // Initialize all modules on DOM ready
 document.addEventListener('DOMContentLoaded', () => {
@@ -14,4 +15,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initFormHandler();
   initLangSwitcher();
   initCounters();
+  initCookieBanner();
 });

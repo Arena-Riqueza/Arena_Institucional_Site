@@ -209,3 +209,79 @@ body {
   .dot { animation: none !important; }
   .reveal, .reveal-left, .reveal-right { opacity: 1 !important; transform: none !important; }
 }
+
+/* ── Cookie Banner (LGPD) ── */
+
+#arena-cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  background: var(--navy-dark, #060f2e);
+  border-top: 1px solid rgba(255, 170, 0, 0.2);
+  padding: 16px 24px;
+  font-family: 'Barlow', sans-serif;
+  animation: slideUp 0.4s ease;
+}
+
+#arena-cookie-banner .cookie-banner-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+#arena-cookie-banner p {
+  flex: 1;
+  min-width: 280px;
+  color: var(--off-white, #e8edf8);
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.cookie-banner-actions {
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.cookie-btn {
+  padding: 10px 24px;
+  border-radius: 3px;
+  font: 600 13px/1 'Barlow Condensed', sans-serif;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s;
+}
+
+.cookie-btn-accept {
+  background: var(--orange, #ffaa00);
+  color: var(--navy-dark, #060f2e);
+}
+
+.cookie-btn-accept:hover {
+  background: var(--orange-dark, #e69500);
+  transform: translateY(-1px);
+}
+
+.cookie-btn-reject {
+  background: transparent;
+  color: var(--gray, #7a8fb0);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.cookie-btn-reject:hover {
+  border-color: var(--orange, #ffaa00);
+  color: var(--orange, #ffaa00);
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
