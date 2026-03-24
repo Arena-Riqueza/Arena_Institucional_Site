@@ -1,7 +1,7 @@
 // Arena da Riqueza — Tracking (Meta Pixel + GA4)
 // Respeita consentimento LGPD: so carrega apos aceite do usuario
 
-const PIXEL_ID = '892518490245460';
+const PIXEL_ID = '916468751176404';
 const GA4_ID = ''; // TODO: inserir GA4 Measurement ID (G-XXXXXXXXXX)
 const CONSENT_KEY = 'arena_cookie_consent';
 
