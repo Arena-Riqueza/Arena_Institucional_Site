@@ -109,7 +109,7 @@ export function initCookieBanner() {
     <div class="cookie-banner-content">
       <p>Utilizamos cookies para melhorar sua experiência e analisar o tráfego do site.
       Ao aceitar, você concorda com o uso de cookies conforme nossa
-      <a href="/politica-de-privacidade" style="color: #ffaa00; text-decoration: underline;">Política de Privacidade</a>.</p>
+      <a href="/privacidade.html" target="_blank" style="color: #ffaa00; text-decoration: underline;">Política de Privacidade</a>.</p>
       <div class="cookie-banner-actions">
         <button id="cookie-accept" class="cookie-btn cookie-btn-accept">Aceitar</button>
         <button id="cookie-reject" class="cookie-btn cookie-btn-reject">Recusar</button>
