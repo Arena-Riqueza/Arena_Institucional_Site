@@ -2,7 +2,7 @@
 // Respeita consentimento LGPD: so carrega apos aceite do usuario
 
 const PIXEL_ID = '916468751176404';
-const GA4_ID = ''; // TODO: inserir GA4 Measurement ID (G-XXXXXXXXXX)
+const GA4_ID = 'G-B58DRJPJ71';
 const CONSENT_KEY = 'arena_cookie_consent';
 
 // ── Consent Management ──
