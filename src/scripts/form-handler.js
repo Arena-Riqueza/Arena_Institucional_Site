@@ -17,7 +17,7 @@ export function getUTMParams() {
 }
 
 // Captura o ID do consultor via ?ref=<uuid>
-// Permite links personalizados como: arenadariqueza.com.br?ref=<uuid-consultor>
+// Permite links personalizados como: arenaglobal.com.br?ref=<uuid-consultor>
 function getConsultantRef() {
   const params = new URLSearchParams(window.location.search);
   const ref = params.get('ref') || '';
