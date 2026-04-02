@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 300" width="900" height="300">
-  <!-- fundo transparente -->
+  <rect width="900" height="300" fill="#060f2e"/>
   <svg x="20" y="40" width="220" height="220" viewBox="0 0 7803.759556 7801.808424">
     <defs>
     <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
