@@ -6,13 +6,14 @@ import { initFormHandler } from './form-handler.js'
 import { initLangSwitcher } from './lang-switcher.js'
 import { initCounters } from './counter.js'
 import { initCookieBanner } from './tracking.js'
+import { initI18n } from './i18n.js'
 
-// Initialize all modules on DOM ready
 document.addEventListener('DOMContentLoaded', () => {
   initNavigation();
   initScrollReveal();
   initTabs();
   initFormHandler();
+  initI18n();        // apply saved lang before rendering
   initLangSwitcher();
   initCounters();
   initCookieBanner();
