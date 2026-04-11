@@ -16,14 +16,19 @@ export function getUTMParams() {
   };
 }
 
-// Captura o ID do consultor via ?ref=<uuid>
-// Permite links personalizados como: arenaglobal.com.br?ref=<uuid-consultor>
+// Captura o ID do consultor via ?ref=<uuid|referralCode>
+// Aceita dois formatos:
+//   - UUID do consultor: arenaglobal.com.br?ref=<uuid-consultor>
+//   - referralCode alfanumérico (8 chars): arenaglobal.com.br?ref=ABC123xy
+// O backend resolve ambos para o consultantId correto.
 function getConsultantRef() {
   const params = new URLSearchParams(window.location.search);
-  const ref = params.get('ref') || '';
-  // Valida formato UUID v4 básico antes de aceitar
-  const UUID_REGEX = /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
-  return UUID_REGEX.test(ref) ? ref : '';
+  const ref = (params.get('ref') || '').trim();
+  if (!ref) return '';
+  const UUID_REGEX = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+  const REFERRAL_CODE_REGEX = /^[A-Za-z0-9]{6,16}$/;
+  if (UUID_REGEX.test(ref) || REFERRAL_CODE_REGEX.test(ref)) return ref;
+  return '';
 }
 
 // ── Phone formatting ──
@@ -222,8 +227,11 @@ export function initFormHandler() {
       if (!finalUtms[k]) delete finalUtms[k];
     });
 
-    // Consultant ref: prioriza URL atual, fallback para sessionStorage
-    const consultantId = getConsultantRef() || sessionStorage.getItem('arena_ref') || undefined;
+    // Consultant ref: prioriza URL atual, fallback para sessionStorage.
+    // Pode ser UUID ou referralCode — o backend resolve ambos via /webhooks/site.
+    const consultantRef = getConsultantRef() || sessionStorage.getItem('arena_ref') || undefined;
+    const UUID_REGEX = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+    const isUuid = consultantRef && UUID_REGEX.test(consultantRef);
 
     const payload = {
       name,
@@ -232,7 +240,8 @@ export function initFormHandler() {
       interest: interest || undefined,
       message: message || undefined,
       ...finalUtms,
-      consultantId,
+      consultantId: isUuid ? consultantRef : undefined,
+      referralCode: !isUuid ? consultantRef : undefined,
     };
 
     setLoading(submitBtn, true);
