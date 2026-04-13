@@ -147,6 +147,7 @@ const translations = {
     'lead.daniela.story': 'Responsável pela estruturação jurídica do ecossistema. Garante conformidade legal de cada operação internacional junto à CVM e Banco Central.',
     'lead.jennifer.story': 'Estrategista de posicionamento e aquisição. Conduz a comunicação institucional e as campanhas que colocam a Arena diante do público qualificado.',
     'lead.joao.story': 'Responsável pela execução de marketing digital e presencial. Converte estratégia em campanhas mensuráveis com geração de leads qualificados.',
+    'lead.samuel.role': 'Estrategista Contábil',
     'lead.samuel.story': 'Especialista em estruturação financeira e tributária para pessoas físicas e jurídicas com alto patrimônio — planejamento, proteção e eficiência fiscal.',
 
     // VALORES
@@ -362,6 +363,7 @@ const translations = {
     'lead.daniela.story': 'Responsible for the legal structuring of the ecosystem. Ensures legal compliance of every international operation with CVM and the Central Bank.',
     'lead.jennifer.story': 'Positioning and acquisition strategist. Leads institutional communication and campaigns that place Arena in front of qualified audiences.',
     'lead.joao.story': 'Responsible for digital and in-person marketing execution. Converts strategy into measurable campaigns with qualified lead generation.',
+    'lead.samuel.role': 'Accounting Strategist',
     'lead.samuel.story': 'Specialist in financial and tax structuring for high-net-worth individuals and corporations — planning, protection and fiscal efficiency.',
 
     // VALORES
@@ -577,6 +579,7 @@ const translations = {
     'lead.daniela.story': 'Responsable de la estructuración jurídica del ecosistema. Garantiza la conformidad legal de cada operación internacional ante la CVM y el Banco Central.',
     'lead.jennifer.story': 'Estratega de posicionamiento y adquisición. Lidera la comunicación institucional y las campañas que colocan a Arena ante el público cualificado.',
     'lead.joao.story': 'Responsable de la ejecución de marketing digital y presencial. Convierte estrategia en campañas medibles con generación de leads cualificados.',
+    'lead.samuel.role': 'Estratega Contable',
     'lead.samuel.story': 'Especialista en estructuración financiera y tributaria para personas físicas y jurídicas con alto patrimonio — planificación, protección y eficiencia fiscal.',
 
     // VALORES
